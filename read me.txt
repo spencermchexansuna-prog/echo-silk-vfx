@@ -1,0 +1,162 @@
+
+
+# ECHO SILK | Gesture VFX Canvas
+
+**手势交互式光效生成工具・VFX 参考画布**
+
+> 
+> 基于 MediaPipe 手势识别 + Canvas 实现的交互式光效生成网页，复刻 weavesilk 丝绸光效风格，支持纯手势绘制、多种对称模式、自动渐变色彩，可导出为 VFX 特效参考图。
+
+---
+
+## 📖 中文使用说明
+
+### ✨ 功能特性
+
+- 🖐️ **纯手势交互**：仅通过摄像头识别手部动作，禁用鼠标绘制
+- 🌀 **4 种对称模式**：镜像 / 螺旋 / 交叉 / 自由绘制
+- 🎨 **线条风格**：弧形平滑曲线 / 锐利直线 一键切换
+- ✏️ **绘制元素**：纯线条 / 点线结合 / 纯光点 三种模式
+- 🌈 **色彩系统**：自动流动变色 / 手动固定色相
+- 💫 **永久痕迹画布**：绘制内容持续保留，可层层叠加
+- 📸 **一键导出**：支持黑底参考图、透明叠加层 PNG 两种格式导出
+- 🎬 **定格功能**：满意后可冻结画面，避免误触修改
+
+### 🌐 在线访问
+
+- 项目仓库：`https://github.com/ywx241010-hue/echo-silk-vfx`
+- 在线演示：`https://echo-silk-vfx.pages.dev`
+
+### 🚀 使用步骤
+
+1. 打开网页后，点击 **「ENTER SPACE」** 进入绘制界面
+2. 点击右上角 **「START CAMERA」** 按钮，授权摄像头权限
+3. 伸出**食指**，在摄像头前移动即可开始绘制光效
+4. 通过左侧控制面板调整对称模式、线条风格、色彩等参数
+5. 绘制完成后点击 **「FREEZE 定格」** 锁定画面
+6. 点击 **「SAVE PNG」** 保存黑底参考图，或 **「SAVE OVERLAY PNG」** 保存透明叠加图
+
+### 🎛️ 控制面板说明
+
+表格
+
+| 分组 | 功能 | 说明 |
+| --- | --- | --- |
+| **SYMMETRY MODE** | MIRROR 镜像 | 左右对称绘制 |
+|  | SPIRAL 螺旋 | 6 重旋转对称，适合万花筒效果 |
+|  | CROSS 交叉 | 上下 + 左右四向对称 |
+|  | NONE 自由 | 无对称，自由绘制 |
+| **LINE STYLE** | CURVE 弧形 | 贝塞尔平滑曲线，线条柔顺自然 |
+|  | SHARP 直线 | 锐利折线，科技感更强 |
+| **DRAW ELEMENT** | LINE 光带 | 仅绘制线条光效 |
+|  | LINE + DOT | 线条 + 光点结合 |
+|  | DOT 光点 | 仅绘制发光粒子点 |
+| **COLOR MODE** | MANUAL 手动 | 固定色相，通过下方滑块调节 |
+|  | AUTO FLOW 自动 | 色相自动循环渐变 |
+| **CANVAS CONTROL** | FREEZE 定格 | 冻结当前画面 |
+|  | RESUME 继续 | 恢复绘制 |
+|  | CLEAR 清空 | 清空全部画布 |
+| **滑块** | CORE WIDTH | 芯线粗细 |
+|  | BLOOM | 光晕扩散程度 |
+|  | SMOOTHNESS | 弧形平滑度 |
+|  | GLOW | 辉光强度 |
+|  | HUE | 手动色相（手动模式生效） |
+|  | AUTO SPEED | 自动变色速度 |
+
+### 💻 本地运行
+
+1. 将 `index.html`、`style.css`、`script.js` 放入同一文件夹
+2. 使用 Chrome / Edge 浏览器打开 `index.html`
+3. 推荐使用本地服务器（如 VS Code Live Server）运行以确保摄像头权限正常
+
+### 🛠️ 技术栈
+
+- HTML5 Canvas 2D
+- MediaPipe Hands 手势识别
+- Vanilla JavaScript
+- CSS3
+
+### ⚠️ 注意事项
+
+- 摄像头画面仅在本地处理，不会上传任何数据
+- 需 HTTPS 或 [localhost](https://localhost) 环境才能正常调用摄像头
+- 建议光线充足环境下使用，识别更稳定
+- 伸出食指、保持手掌在画面内，绘制效果最佳
+
+---
+
+## 📖 English Instructions
+
+### ✨ Features
+
+- 🖐️ **Gesture-only interaction**: Controlled by hand tracking via webcam, mouse drawing is disabled
+- 🌀 **4 symmetry modes**: Mirror / Spiral / Cross / Free draw
+- 🎨 **Line styles**: Smooth curved lines or sharp straight lines, one-click switch
+- ✏️ **Draw elements**: Line only / Line + Dot / Dot only
+- 🌈 **Color system**: Auto-flowing gradient or manual fixed hue
+- 💫 **Permanent canvas**: All strokes stay permanently, layerable
+- 📸 **One-click export**: Export as black-background reference PNG or transparent overlay PNG
+- 🎬 **Freeze mode**: Lock the canvas when satisfied to prevent accidental changes
+
+### 🌐 Links
+
+- Repository: `https://github.com/ywx241010-hue/echo-silk-vfx`
+- Live Demo: `https://echo-silk-vfx.pages.dev`
+
+### 🚀 How to Use
+
+1. Open the page and click **「ENTER SPACE」** to enter the canvas
+2. Click **「START CAMERA」** at the top right and allow webcam permission
+3. Extend your **index finger** and move it in front of the camera to draw
+4. Adjust symmetry, line style, color and other parameters via the left panel
+5. Click **「FREEZE」** to lock the canvas when you finish
+6. Click **「SAVE PNG」** for black-background reference, or **「SAVE OVERLAY PNG」** for transparent layer
+
+### 🎛️ Control Panel
+
+表格
+
+| Group | Option | Description |
+| --- | --- | --- |
+| **SYMMETRY MODE** | MIRROR | Left-right symmetric draw |
+|  | SPIRAL | 6-fold rotational symmetry, kaleidoscope effect |
+|  | CROSS | 4-way symmetry (horizontal + vertical) |
+|  | NONE | Free drawing without symmetry |
+| **LINE STYLE** | CURVE | Bezier smoothed, soft and natural lines |
+|  | SHARP | Sharp angular lines, tech-style |
+| **DRAW ELEMENT** | LINE | Light streak only |
+|  | LINE + DOT | Streaks combined with glow dots |
+|  | DOT | Glowing particle dots only |
+| **COLOR MODE** | MANUAL | Fixed hue, adjustable via slider |
+|  | AUTO FLOW | Auto cycling hue gradient |
+| **CANVAS CONTROL** | FREEZE | Lock current canvas |
+|  | RESUME | Continue drawing |
+|  | CLEAR | Clear entire canvas |
+| **Sliders** | CORE WIDTH | Core line thickness |
+|  | BLOOM | Bloom spread amount |
+|  | SMOOTHNESS | Curve smoothness |
+|  | GLOW | Glow intensity |
+|  | HUE | Manual hue (works in MANUAL mode) |
+|  | AUTO SPEED | Auto color change speed |
+
+### 💻 Run Locally
+
+1. Put `index.html`, `style.css`, `script.js` in the same folder
+2. Open `index.html` with Chrome / Edge
+3. Recommended to use a local server (e.g. VS Code Live Server) for proper webcam access
+
+### 🛠️ Tech Stack
+
+- HTML5 Canvas 2D
+- MediaPipe Hands
+- Vanilla JavaScript
+- CSS3
+
+### ⚠️ Notes
+
+- All camera processing runs locally, no data is uploaded
+- Webcam requires HTTPS or [localhost](https://localhost) environment
+- Works best in well-lit environments for stable tracking
+- Extend your index finger and keep your hand in frame for best results
+
+

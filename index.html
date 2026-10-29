@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ECHO SILK | Gesture VFX Canvas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">ECHO / SILK</div>
+    <div class="nav-right">
+      <button id="startBtn">START CAMERA</button>
+    </div>
+  </header>
+
+  <main>
+    <aside>
+      <div class="control-group">
+        <h4>SYMMETRY MODE</h4>
+        <button class="btn active" data-mode="mirror">MIRROR 镜像</button>
+        <button class="btn" data-mode="spiral">SPIRAL 螺旋</button>
+        <button class="btn" data-mode="cross">CROSS 交叉</button>
+        <button class="btn" data-mode="none">NONE 自由</button>
+      </div>
+
+      <div class="control-group">
+        <h4>LINE STYLE</h4>
+        <button class="btn active" data-line="curve">CURVE 弧形</button>
+        <button class="btn" data-line="sharp">SHARP 直线</button>
+      </div>
+
+      <div class="control-group">
+        <h4>DRAW ELEMENT</h4>
+        <button class="btn active" data-draw="line">LINE 光带</button>
+        <button class="btn" data-draw="both">LINE + DOT 点线</button>
+        <button class="btn" data-draw="dot">DOT 光点</button>
+      </div>
+
+      <div class="control-group">
+        <h4>COLOR MODE</h4>
+        <button class="btn" data-color="manual">MANUAL 手动</button>
+        <button class="btn active" data-color="auto">AUTO FLOW 自动</button>
+      </div>
+
+      <div class="control-group">
+        <h4>CANVAS CONTROL</h4>
+        <button id="freezeBtn" class="btn">FREEZE 定格</button>
+        <button id="resumeBtn" class="btn">RESUME 继续</button>
+        <button id="clearBtn" class="btn danger">CLEAR 清空</button>
+      </div>
+
+      <div class="control-group">
+        <h4>SAVE VFX REFERENCE</h4>
+        <button id="savePngBtn">SAVE PNG</button>
+        <button id="saveOverlayBtn">SAVE OVERLAY PNG</button>
+      </div>
+
+      <div class="control-group">
+        <h4>CORE WIDTH 芯线宽度</h4>
+        <input type="range" id="widthSlider" min="0.5" max="10" step="0.5" value="1" />
+      </div>
+
+      <div class="control-group">
+        <h4>BLOOM 扩散程度</h4>
+        <input type="range" id="bloomSlider" min="3" max="40" value="8" />
+      </div>
+
+      <div class="control-group">
+        <h4>SMOOTHNESS 弧度平滑</h4>
+        <input type="range" id="smoothSlider" min="0.2" max="0.95" step="0.05" value="0.7" />
+      </div>
+
+      <div class="control-group">
+        <h4>GLOW 辉光强度</h4>
+        <input type="range" id="glowSlider" min="1" max="30" value="4" />
+      </div>
+
+      <div class="control-group">
+        <h4>HUE</h4>
+        <input type="range" id="hueSlider" min="0" max="360" value="160" />
+      </div>
+
+      <div class="control-group">
+        <h4>AUTO SPEED</h4>
+        <input type="range" id="speedSlider" min="0.2" max="4" step="0.1" value="1" />
+      </div>
+
+      <div class="control-group">
+        <h4>INSTRUCTION</h4>
+        <p>
+          前置界面点击开始后<br />
+          仅支持手势交互<br />
+          鼠标无法绘制
+        </p>
+      </div>
+    </aside>
+
+    <div class="canvas-wrap">
+      <canvas id="canvas"></canvas>
+      <video id="video" autoplay playsinline muted></video>
+      <div class="status" id="status">等待启动摄像头</div>
+      <div class="hint">Gesture Only VFX Canvas</div>
+
+      <!-- 前置交互界面 -->
+      <div id="introOverlay" class="intro-overlay">
+        <div class="intro-box">
+          <h1>SILK</h1>
+          <p class="intro-sub">Enter the space and make a gesture.</p>
+          <button id="enterBtn">ENTER SPACE</button>
+          <p class="intro-note">Clear something</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
